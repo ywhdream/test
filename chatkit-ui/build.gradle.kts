@@ -95,7 +95,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.ywhdream"
                 artifactId = "test"
-                version = "1.0.1"
+                version = "1.0.2"
             }
         }
     }
