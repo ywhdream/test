@@ -92,10 +92,10 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             register<MavenPublication>("release") {
                 // 从 components.release 获取组件
-                from(components["release"])
+                from(components["android"])
                 groupId = "com.github.ywhdream"
                 artifactId = "test"
-                version = "1.0.3"
+                version = "1.0.4"
             }
         }
     }
