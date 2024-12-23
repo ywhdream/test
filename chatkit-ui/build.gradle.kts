@@ -47,6 +47,24 @@ android {
     sourceSets["main"].res.srcDirs("src/main/res", "src/main/res-fun", "src/main/res-normal")
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            // 创建一个名为 "release" 的 Maven publication
+            register<MavenPublication>("release") {
+                // 从 components["android"] 获取组件，确保 "android" 组件存在
+                from(components["release"])
+
+                // 设置 groupId, artifactId, version
+                groupId = "com.github.ywhdream"
+                artifactId = "test"
+                version = "1.0.4"
+            }
+        }
+    }
+}
+
+
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
@@ -75,28 +93,4 @@ dependencies {
 
 }
 
-afterEvaluate {
-//    publishing {
-//        publications {
-//            create<MavenPublication>("mavenJava") {
-//                from(components["java"])
-//                groupId = "com.github.ywhdream"
-//                artifactId = "im"
-//                version = "1.0.7"
-//            }
-//        }
-//    }
 
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            register<MavenPublication>("release") {
-                // 从 components.release 获取组件
-                from(components["android"])
-                groupId = "com.github.ywhdream"
-                artifactId = "test"
-                version = "1.0.4"
-            }
-        }
-    }
-}
