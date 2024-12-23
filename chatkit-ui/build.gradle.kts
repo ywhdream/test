@@ -58,7 +58,7 @@ afterEvaluate {
                 // 设置 groupId, artifactId, version
                 groupId = "com.github.ywhdream"
                 artifactId = "test"
-                version = "1.0.4"
+                version = "1.0.5"
             }
         }
     }
